@@ -11,18 +11,17 @@ void main() {
     await tester.pumpWidget(makeTestableWidget());
     expect(find.text('Login'), findsOneWidget);
     expect(find.text("Don't have an account? Register"), findsOneWidget);
-    expect(find.byType(TextFormField), findsNWidgets(2)); // email + password
+    expect(find.byType(TextFormField), findsNWidgets(2));  
   });
 
   testWidgets('Toggle to Register shows Full Name field', (tester) async {
     await tester.pumpWidget(makeTestableWidget());
 
-    // apasă butonul toggle
     await tester.tap(find.text("Don't have an account? Register"));
     await tester.pumpAndSettle();
 
     expect(find.text('Register'), findsOneWidget);
-    expect(find.byType(TextFormField), findsNWidgets(3)); // name + email + password
+    expect(find.byType(TextFormField), findsNWidgets(3));  
     expect(find.widgetWithText(TextFormField, 'Full Name'), findsOneWidget);
   });
 

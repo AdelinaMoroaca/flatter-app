@@ -3,7 +3,6 @@ import 'package:mocktail/mocktail.dart';
 import 'package:my_app/services/auth_service.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
-// Fake User pentru test
 class FakeUser extends Fake implements User {}
 
 class MockAuthService extends Mock implements AuthService {}
