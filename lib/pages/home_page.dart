@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:firebase_auth/firebase_auth.dart';
+import 'package:my_app/services/auth_service.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final user = FirebaseAuth.instance.currentUser;
+    final authService = AuthService();
+    final user = authService.currentUser;
     final name = user?.displayName ?? user?.email ?? "User";
 
     return Scaffold(
@@ -16,8 +17,8 @@ class HomePage extends StatelessWidget {
           IconButton(
             icon: const Icon(Icons.logout),
             onPressed: () async {
-              await FirebaseAuth.instance.signOut();
-              Navigator.pushReplacementNamed(context, '/');
+              await authService.signOut();
+              if (context.mounted) Navigator.pushReplacementNamed(context, '/');
             },
           )
         ],

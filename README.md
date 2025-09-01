@@ -1,5 +1,8 @@
 Flutter Firebase Authentication Demo
 
+Project Console: https://console.firebase.google.com/project/fir-auth-6b9b6/overview
+Hosting URL: https://fir-auth-6b9b6.web.app
+
 A simple Flutter application that demonstrates user authentication with Firebase using Email & Password.
 The app allows users to register, log in, and log out, with personalized messages displayed after login.
 
